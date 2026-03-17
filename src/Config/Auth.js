@@ -1,8 +1,8 @@
 
 // Axis/RDM
-const login_url="http://Rdmbackend-env.eba-7sykhjst.eu-west-3.elasticbeanstalk.com";
-  const base_url  = "http://newrdmbackend-env.eba-sbrmdtbv.eu-west-3.elasticbeanstalk.com/api/v1";
-      const anyalytic_url  = "http://newrdmbackend-env.eba-sbrmdtbv.eu-west-3.elasticbeanstalk.com";
+const login_url = "https://rdmbackend.selectiontowork.com";
+    const base_url  = "https://rdmbackend.selectiontowork.com/api/v1";
+      const anyalytic_url  = "https://rdmbackend.selectiontowork.com";
 const key_url ="selectiontowork.com"
 
 
