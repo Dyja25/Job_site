@@ -7,7 +7,7 @@ import { FormattedMessage } from "react-intl";
 import PartnerContent from "./PartnerContent.jsx";
 
 import FWLogo from "../../images/Picture.jpg";
-import Header from "../../Components/Header/Header.jsx";
+// import Header from "../../Components/Header/Header.jsx";
 import PartnerForm from "./PartnerForm.jsx";
 
 function Partner(props) {
@@ -24,7 +24,7 @@ function Partner(props) {
       <div class="md:flex justify-center bg-slate-200 ">
         <div>
       <div class="md:w-w7 bg-white ">
-      <Header/>
+      {/* <Header/> */}
       {/* <div class="sm:flex flex-wrap gap-4 border-solid ml-margin5  w-11/12 flex-col xl:flex-row flex justify-evenly mt-6 box-border h-auto"> */}
         {/* <FlexContainer class="sm:flex flex-wrap gap-4 border-solid ml-margin5  w-11/12 flex-col xl:flex-row flex justify-evenly mt-6 box-border h-auto">
         

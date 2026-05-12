@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { FormattedMessage } from "react-intl";
 import FWLogo from "../../images/Picture.jpg";
-import Header from "../../Components/Header/Header.jsx";
+// import Header from "../../Components/Header/Header.jsx";
 ;
 import JobCard from "../../Jobsite/JobCard.jsx";
 
@@ -21,7 +21,7 @@ function VacancyPage(props) {
       <div class="md:flex justify-center bg-slate-200 ">
         <div>
       <div class="md:w-w7 bg-white ">
-      <Header/>
+      {/* <Header/> */}
         <div class="w-wk h-18 max-sm:h-96">
 <img 
  class=" h-4/5"

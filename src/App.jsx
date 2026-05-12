@@ -16,6 +16,7 @@ import Partner from "./Container/Partner/Partner.jsx";
 import VacancyPage from "./Container/Partner/VacancyPage.jsx";
 
 import CandidateJobApplyForm from "./Jobsite/CandidateJobApplyForm";
+import Header from "./Components/Header/Header.jsx";
 
 
 
@@ -29,11 +30,16 @@ class App extends Component {
     const { fetchingUserDetails } = this.props;
     return (
       <div>
-     
+     <div className="bg-gray-200">
+          
+          <div className="max-sm:m-0 md:w-w7 m-auto bg-white">
+            <Header/>
+            </div>
+            </div>
           <Suspense fallback={<BundleLoader />}>
           <Routes>
             
-            <Route  path="/" element={<Job/>}/>
+            {/* <Route  path="/" element={<Job/>}/> */}
             <Route  path="/talent" element={<JobTalent/>}/>
             <Route   path="/partner" element={<Partner/>}/>
             <Route   path="/vacancy" element={<VacancyPage/>}/>

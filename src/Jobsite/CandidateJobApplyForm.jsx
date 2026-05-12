@@ -998,15 +998,17 @@ class CandidateJobApplyForm extends Component {
                     </div> 
                     <Spacer style={{ marginTop: "5%" }} />
                     <div >
+                    <div className="flex flex-col">
                       <FastField
                         name="noticePeriod"
                         label="Notice"
                         isColumn
-                        width={"100%"}
+                        width="100%"
                         options={["1", "2", "3", "4", "5", "6", "7", "8"]}
                         component={SelectComponent}
-                        inlineLabel
+                        // inlineLabel
                       />
+                    </div>
                     </div>
                     <Spacer style={{ marginTop: "8%" }} />
                     <FieldArray

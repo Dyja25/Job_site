@@ -24,7 +24,7 @@ function JobTalent(props) {
       <div class="md:flex justify-center bg-slate-200  h-screen">
       <div >
       <div class="md:w-w7 bg-white ">
-      <Header/>
+      {/* <Header/> */}
        
    
    <div class="w-wk h-18 max-sm:h-96">
