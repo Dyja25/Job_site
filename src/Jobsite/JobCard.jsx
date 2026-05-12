@@ -128,10 +128,11 @@ useEffect(() => {
       <Formik>
       <div className="wrapper">
     
-        <div class="ml-9 flex items-center">
+        <div class="ml-9 flex items-center max-sm:flex-col max-sm:items-stretch max-sm:ml-0 max-sm:gap-3 max-sm:px-3">
         <div className=" h-8 w-48 flex-shrink-0 overflow-hidden rounded-sm border-2 border-gray-200 object-cover object-center ">
         <FormattedMessage id="app.sear" defaultMessage="sear">
         {sear=>( <input
+        className="w-full h-full px-2"
           type="text"
           value={filterText}
           onChange={e => setFilterText(e.target.value)}
@@ -140,9 +141,8 @@ useEffect(() => {
         )}
         </FormattedMessage>
         </div>
-        <div className=" h-8 w-40  ml-4 flex-shrink-0 overflow-hidden rounded-sm border-2 border-gray-200 object-cover object-center ">
-        <FormattedMessage id="app.rolee" defaultMessage="rolee">
-        {rolee=>( <select value={selectedRole} onChange={handleRoleChange} style={{width:"8rem"}}>
+<div className="h-8 w-40 max-sm:w-full ml-4 max-sm:ml-0 flex-shrink-0 overflow-hidden rounded-sm border-2 border-gray-200 object-cover object-center">        <FormattedMessage id="app.rolee" defaultMessage="rolee">
+        {rolee=>( <select value={selectedRole} onChange={handleRoleChange}  className="w-full h-full px-1">
         <option value="">{rolee}</option>
         {rolesNameOption.map((roleOption, index) => (
           <option key={index} value={roleOption.value}>
@@ -170,12 +170,13 @@ useEffect(() => {
   ))}
 </select> */}
 
-<div className=" h-8 w-40  ml-4 flex-shrink-0 overflow-hidden rounded-sm border-2 border-gray-200 object-cover object-center ">
-<FormattedMessage id="app.preference" defaultMessage="preference">
+<div className="h-8 w-40 max-sm:w-full ml-4 max-sm:ml-0 flex-shrink-0 overflow-hidden rounded-sm border-2 border-gray-200 object-cover object-center">
+  <FormattedMessage id="app.preference" defaultMessage="preference">
 {preference=>(<select
   id="selectPreference"
   value={selectedPreference}
   onChange={handlePreferenceChange}
+  className="w-full h-full px-1"
 >
   <option value="" disabled>
     {preference}
@@ -191,9 +192,8 @@ useEffect(() => {
 </FormattedMessage>
 
                       </div>    
-                      <div className=" h-8 w-40  ml-4 flex-shrink-0 overflow-hidden rounded-sm border-2 border-gray-200 object-cover object-center ">
-                      <FormattedMessage id="app.country" defaultMessage="country">
-        {country=>( <select value={selectedCountry} onChange={handleCountryChange} style={{width:"8rem"}}>
+<div className="h-8 w-40 max-sm:w-full ml-4 max-sm:ml-0 flex-shrink-0 overflow-hidden rounded-sm border-2 border-gray-200 object-cover object-center">                      <FormattedMessage id="app.country" defaultMessage="country">
+        {country=>( <select value={selectedCountry} onChange={handleCountryChange} className="w-full h-full px-1">
         <option value="">{country}</option>
         {countryNameOption.map((countryOption, index) => (
           <option key={index} value={countryOption.value}>
@@ -210,10 +210,10 @@ useEffect(() => {
        const city=item.address.length&&item.address[0].city
         console.log(item.address.length&&item.address[0].city)
         return (
-          <div className=" h-64 w-wk mt-2 flex-shrink-0 overflow-hidden rounded-sm border-2 border-gray-200 object-cover object-center ">
-          <div className="flex max-sm:flex-col md:flex-row w-wk justify-between mt-8">
-           <div class="flex max-sm:flex-row justify-around m-4 md:w-2/5 ">
-            <div class="max-sm:w-2/4 md:w-2/5">
+         <div className="h-64 max-sm:h-auto w-wk max-sm:w-full mt-2 flex-shrink-0 overflow-hidden rounded-sm border-2 border-gray-200 object-cover object-center max-sm:px-2">
+          <div className="flex max-sm:flex-col md:flex-row w-wk max-sm:w-full justify-between mt-8 max-sm:gap-4">
+           <div class="flex max-sm:flex-col justify-around m-4 md:w-2/5 max-sm:gap-4">
+            <div class="max-sm:w-full md:w-2/5">
               <h3 className="job" ><b>Job ID</b>{item.jobOrder}</h3>
               <h3 className="crd mt-2"><b>
                 {/* Job closed by */}
@@ -233,7 +233,7 @@ useEffect(() => {
          
             {/* <h3 className="req"><b>Skills</b><h3 className=" overflow-auto">{item.skillName}</h3></h3> */}
             </div>
-            <div class="max-sm:w-2/4 md:w-2/4">
+            <div class="max-sm:w-full md:w-2/4">
              
             <h3 className="req "><b>
     
@@ -262,8 +262,8 @@ useEffect(() => {
               
             </div>
             </div>
-            <div class="flex max-sm:flex-row justify-around m-4 md:w-2/4 ">
-            <div class="max-sm:w-2/3 md:w-full h-96">
+            <div class="flex max-sm:flex-col justify-around m-4 md:w-2/4 max-sm:gap-4">
+            <div class="max-sm:w-full md:w-full max-sm:h-auto h-96 ">
             <h3><b><FormattedMessage
                   id="app.description"
                   defaultMessage="description"
@@ -271,7 +271,7 @@ useEffect(() => {
               </b></h3>
               <h3 className="description whitespace-pre-line">{item.description}</h3>
             </div>
-            {/* <div class="mt-20 ml-4">
+            {/* <div class="mt-20 ml-4 max-sm:mt-4 max-sm:ml-0 max-sm:flex max-sm:justify-center">
               <a href="https://talent.tekorero.com/contact/" target="_blank">
             <Button
               type="primary"
@@ -285,7 +285,7 @@ useEffect(() => {
             </Button>
             </a>
             </div> */}
-            <div class="mt-20 ml-4">
+            <div class="mt-20 ml-4 max-sm:mt-4 max-sm:ml-0 max-sm:flex max-sm:justify-center">
             <Button
               type="primary"
               htmlType="submit"

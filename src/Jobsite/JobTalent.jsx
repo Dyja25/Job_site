@@ -21,7 +21,7 @@ function JobTalent(props) {
   return (
     
     <React.Fragment >
-      <div class="md:flex justify-center bg-slate-200  h-screen">
+      <div className="md:flex justify-center bg-slate-200 min-h-screen max-sm:overflow-x-hidden">
       <div >
       <div class="md:w-w7 bg-white ">
       {/* <Header/> */}

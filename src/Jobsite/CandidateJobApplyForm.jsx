@@ -824,10 +824,6 @@ class CandidateJobApplyForm extends Component {
                     </div>
                     <div style={{width:"49%"}}>
                       {/* Right */}
-                      
-                        
-
-                        
 
                        <div >
                       <Field
@@ -997,7 +993,6 @@ class CandidateJobApplyForm extends Component {
                       />
                     </div> 
                     <Spacer style={{ marginTop: "5%" }} />
-                    <div >
                     <div className="flex flex-col">
                       <FastField
                         name="noticePeriod"
@@ -1008,7 +1003,6 @@ class CandidateJobApplyForm extends Component {
                         component={SelectComponent}
                         // inlineLabel
                       />
-                    </div>
                     </div>
                     <Spacer style={{ marginTop: "8%" }} />
                     <FieldArray
@@ -1068,12 +1062,3 @@ const mapDispatchToProps = (dispatch) =>
   );
 
 export default connect(mapStateToProps, mapDispatchToProps)(CandidateJobApplyForm);
-
-
-
-
-
-
-
-
-

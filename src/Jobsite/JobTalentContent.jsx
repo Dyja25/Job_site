@@ -6,8 +6,6 @@ import { FormattedMessage } from "react-intl";
 import { Button } from "antd";
 // import "./job.scss";
 
-
-
 function JobTalentContent(props) {
   useEffect(() => {
     
@@ -67,7 +65,7 @@ function JobTalentContent(props) {
            </p> */}
            </div>
        
-           <div class="w-8/12 mt-12">
+           <div class="w-8/12 mt-10">
            <h2 class=" max-sm: text-3xl md:text-5xl ">
             {/* What we offer! */}
             <FormattedMessage
@@ -103,7 +101,7 @@ function JobTalentContent(props) {
                 />
           </p> */}
           </div>
-          <div class="mt-12 max-sm:w-w77 max-sm:ml-margin5 md:w-w81  flex flex-col items-center ml-margin10 ">
+          <div class="mt-4 max-sm:w-w77 max-sm:ml-margin5 md:w-w81  flex flex-col items-center ml-margin10 ">
           <h2 class=" max-sm: text-3xl md:text-5xl flex justify-start w-w94">
             {/* Have any questions? */}
             <FormattedMessage
@@ -119,7 +117,7 @@ function JobTalentContent(props) {
           {/* We will help you with all your questions to clear up any confusion or ambiguity! */}
           </p>
       </div>
-      <div class="-ml-80 mt-4 max-sm:-ml-32">
+      <div class="-ml-[19rem] mt-4 max-sm:-ml-32">
         <Button
         className="abtnn text-white "
                 >
@@ -127,11 +125,7 @@ function JobTalentContent(props) {
                
                 </Button>
                 </div> 
-      </div>
-      <div class="w-w72 -mt-margin91 ml-24 ">
-     
-                </div>
-              
+      </div>      
     </React.Fragment>
   )
 }
