@@ -5,13 +5,8 @@ import { Button, Checkbox, message } from "antd";
 import { Formik, Form, FastField, Field, FieldArray } from "formik";
 import * as Yup from "yup";
 import { MainWrapper, Spacer } from "../Components/UI/Elements";
-
 import { InputComponent } from "../Components/Forms/Formik/InputComponent.jsx";
-
-
 import { FlexContainer } from "../Components/UI/Layout";
-
-
 import {AddEmail,handleCandidateApplyModal,handleEmailFormModal} from "./JobAction";
 import CandidateJobApplyModal from "./CandidateJobApplyModal.jsx";
 const CandidateSchema = Yup.object().shape({
@@ -107,7 +102,7 @@ class JobEmailForm extends Component {
         <Spacer />
 
         <FlexContainer>
-          <div style={{ width: "45%" }}>
+         <div style={{ width: window.innerWidth < 640 ? "100%" : "45%" }}>
             <Field
               type="email"
               name="emailId"
@@ -122,7 +117,9 @@ class JobEmailForm extends Component {
 
         <Spacer style={{ margin: "1%" }} />
 
-        <FlexContainer justifyContent="flex-end">
+        <FlexContainer
+  justifyContent={window.innerWidth < 640 ? "center" : "flex-end"}
+>
           <Button
             type="primary"
             htmlType="submit"

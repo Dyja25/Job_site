@@ -269,7 +269,7 @@ useEffect(() => {
                   defaultMessage="description"
                 />
               </b></h3>
-              <h3 className="description whitespace-pre-line">{item.description}</h3>
+             <h3 className="whitespace-pre-line break-words md:text-justify max-sm:text-sm max-sm:leading-6">{item.description}</h3>
             </div>
             {/* <div class="mt-20 ml-4 max-sm:mt-4 max-sm:ml-0 max-sm:flex max-sm:justify-center">
               <a href="https://talent.tekorero.com/contact/" target="_blank">

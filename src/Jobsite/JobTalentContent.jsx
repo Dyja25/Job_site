@@ -6,6 +6,8 @@ import { FormattedMessage } from "react-intl";
 import { Button } from "antd";
 // import "./job.scss";
 
+
+
 function JobTalentContent(props) {
   useEffect(() => {
     

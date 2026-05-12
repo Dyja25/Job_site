@@ -9,12 +9,14 @@ function AddEmailFormModal (props) {
         <>
         <StyledModal
                     title={"Email"}
-                     width="35%"
+                      width={window.innerWidth < 640 ? "95%" : "35%"}
                     visible={props.addEmailformModal}
                     destroyOnClose
                     maskClosable={false}
                     maskStyle={{ backgroundColor: "rgba(1, 30, 71,0.7)" }}
-                    style={{ top: 40 }}
+                    style={{
+  top: window.innerWidth < 640 ? 10 : 40,
+}}
                     onCancel={() => props.handleEmailFormModal(false)}
                     footer={null}
                 >
