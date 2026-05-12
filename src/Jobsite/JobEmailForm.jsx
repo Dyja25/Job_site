@@ -12,14 +12,13 @@ import { InputComponent } from "../Components/Forms/Formik/InputComponent.jsx";
 import { FlexContainer } from "../Components/UI/Layout";
 
 
-import {AddEmail,handleCandidateApplyModal} from "./JobAction";
+import {AddEmail,handleCandidateApplyModal,handleEmailFormModal} from "./JobAction";
 import CandidateJobApplyModal from "./CandidateJobApplyModal.jsx";
 const CandidateSchema = Yup.object().shape({
-  // contactOwner: Yup.string().required("Please Select contact owner"),
-  emailId: Yup.string().email("Enter a valid Email").required("Input needed!"),
-  // contactMapper: Yup.object({
-  //   emailId:Yup.string().email("Enter a valid Email").required("Input needed!"),
-  // }),
+  emailId: Yup.string()
+    .trim()
+    .email("Enter a valid Email")
+    .required("Input needed!"),
 });
 class JobEmailForm extends Component {
     constructor(props) {
@@ -40,11 +39,22 @@ class JobEmailForm extends Component {
       console.log(this.state.checkeds);
     };
    
-    handleCallBack =(data)=>{   
-      if(data.candidateInd === false){
-      this.props.handleCandidateApplyModal(true)
-      }        
-         }
+    // handleCallBack =(data)=>{   
+    //   if(data.candidateInd === false){
+    //   this.props.handleCandidateApplyModal(true)
+    //   }        
+    //      }
+
+    handleCallBack = (data) => {
+
+  if (data.candidateInd === true) {
+    this.props.handleEmailFormModal(false);
+  }
+
+  if (data.candidateInd === false) {
+    this.props.handleCandidateApplyModal(true);
+  }
+};
          
  
     render() {
@@ -56,74 +66,75 @@ class JobEmailForm extends Component {
     
         return (
             <>
-              <Formik
-                initialValues={{
-                  emailId: "",
-                  opportunityId:this.props.setEditingCard.opportunityId,
-                  recruitmentId:this.props.setEditingCard.recruitmentId,
-                  recruitmentProcessId:this.props.setEditingCard.recruitmentProcessId
-                  
-                  // contactMapper:{
-                  //   emailId : "",
-                  // },
-                }}
-                 validationSchema={CandidateSchema}
-                onSubmit={(values, { resetForm }) => {
-                  console.log(values,this.props.responseData&&this.props.responseData.phoneNumbers.length  ?  this.props.responseData.phoneNumbers[0] : "",);
-                 
-                  this.props.AddEmail(
-                    {
-                      ...values,  
-                      opportunityId:this.props.setEditingCard.opportunityId,  
-                      recruitmentId:this.props.setEditingCard.recruitmentId,
-                      recruitmentProcessId:this.props.setEditingCard.recruitmentProcessId,
-                       status: this.state.documentStatus ? "true" : "false",
-                    },
+        <Formik
+  initialValues={{
+    emailId: "",
+    opportunityId: this.props.setEditingCard.opportunityId,
+    recruitmentId: this.props.setEditingCard.recruitmentId,
+    recruitmentProcessId:
+      this.props.setEditingCard.recruitmentProcessId,
+  }}
+  validationSchema={CandidateSchema}
+  onSubmit={(values, { resetForm }) => {
+    console.log("SUBMIT WORKING", values);
+
+    this.props.AddEmail(
+      {
+        ...values,
+        opportunityId: this.props.setEditingCard.opportunityId,
+        recruitmentId: this.props.setEditingCard.recruitmentId,
+        recruitmentProcessId:
+          this.props.setEditingCard.recruitmentProcessId,
+        status: this.state.documentStatus ? "true" : "false",
+      },
       this.handleCallBack
-                    // () => this.handleReset(resetForm)
-                  );
-                }}
-              >
-                {({
-                  values,
-                  errors,
-                  touched,
-                  isSubmitting,
-                  setFieldValue,
-                  setFieldTouched,
-                }) => (
-                    <Form>
-              <Spacer />
-              
-                <FlexContainer >
-                    <div style={{ width: "45%" }}>
-                      <FastField
-                        type="email"
-                        name="emailId"
-                        label="Email"  
-                        isColumn
-                        width={"100%"}
-                        component={InputComponent}
-                        inlineLabel
-                      />
-                    </div>
-                   
-                  </FlexContainer>
-             
-              <Spacer style={{margin:"1%"}}/>
-              <FlexContainer justifyContent="flex-end">
-              <Button
-                  type="primary"
-                  htmlType="submit"
-                  // icon={<PoweroffOutlined />}
-                  loading={this.props.addingEmail}
-                >
-                  Submit
-                </Button>
-                    </FlexContainer>
-            </Form>
-          )}
-        </Formik>
+    );
+  }}
+>
+  {({
+    values,
+    errors,
+    touched,
+    isSubmitting,
+    setFieldValue,
+    setFieldTouched,
+  }) => {
+    console.log("VALUES", values);
+    console.log("ERRORS", errors);
+
+    return (
+      <Form>
+        <Spacer />
+
+        <FlexContainer>
+          <div style={{ width: "45%" }}>
+            <Field
+              type="email"
+              name="emailId"
+              label="Email"
+              isColumn
+              width={"100%"}
+              component={InputComponent}
+              inlineLabel
+            />
+          </div>
+        </FlexContainer>
+
+        <Spacer style={{ margin: "1%" }} />
+
+        <FlexContainer justifyContent="flex-end">
+          <Button
+            type="primary"
+            htmlType="submit"
+            loading={this.props.addingEmail}
+          >
+            Submit
+          </Button>
+        </FlexContainer>
+      </Form>
+    );
+  }}
+</Formik>
         <CandidateJobApplyModal
         addCandidateApply={addCandidateApply}
         handleCandidateApplyModal={this.props.handleCandidateApplyModal}
@@ -147,7 +158,8 @@ const mapStateToProps = ({ auth, job }) => ({
     bindActionCreators(
       {
         AddEmail,
-        handleCandidateApplyModal
+        handleCandidateApplyModal,
+        handleEmailFormModal
       },
       dispatch
     );
