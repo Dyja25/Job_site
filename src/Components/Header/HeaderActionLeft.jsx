@@ -242,6 +242,14 @@ const JobHeaderLeft = () => {
             >
               Vacancy
             </NavLink>
+             <NavLink
+              to="/hello"
+              className={({ isActive }) =>
+                isActive ? "text-blue-600 font-bold" : "text-black"
+              }
+            >
+              Hello
+            </NavLink>
           </Tooltip>
         </div>
 
