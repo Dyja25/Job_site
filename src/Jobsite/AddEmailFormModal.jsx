@@ -9,7 +9,7 @@ function AddEmailFormModal (props) {
         <>
         <StyledModal
                     title={"Email"}
-                      width={window.innerWidth < 640 ? "95%" : "35%"}
+                      width={window.innerWidth <= 768 ? "95%" : "35%"}
                     visible={props.addEmailformModal}
                     destroyOnClose
                     maskClosable={false}

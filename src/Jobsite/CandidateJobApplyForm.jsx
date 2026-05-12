@@ -297,18 +297,52 @@ class CandidateJobApplyForm extends Component {
           }) => (
             <Form >
               <Spacer />
-              <div style={{ display: "flex", justifyContent: "space-between",height: "70vh", overflow:"scroll",paddingRight: "0.6em" }}>
+              <div
+  className="max-sm:flex-col"
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    height: window.innerWidth <= 768 ? "auto" : "70vh",
+    overflowY: "auto",
+    overflowX: "hidden",
+    paddingRight: window.innerWidth <= 768 ? "0" : "0.6em",
+    gap: window.innerWidth <= 768 ? "1rem" : "0",
+  }}
+>
              
                 <Spacer />
-                <div style={{width:"100%",display:"flex", justifyContent:"space-between"}}>
-                    <div style={{width:"49%",}}>
+                <div
+  className="max-sm:flex-col"
+  style={{
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+    flexDirection: window.innerWidth <= 768 ? "column" : "row",
+    gap: window.innerWidth <= 768 ? "1rem" : "0",
+  }}
+>
+                    <div
+  style={{
+    width: window.innerWidth <= 768 ? "100%" : "49%",
+  }}
+>
                     {/* Left */}
                     <div>
-                    <FlexContainer flexWrap="no-wrap">
+                    <FlexContainer
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "no-wrap"}
+>
                     <FastField name="imageId" component={Upload} />
                     <div>
-                      <FlexContainer justifyContent="space-between">
-                        <div style={{ width: "35%" }}>
+                      <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
+                       <div
+  style={{
+    width: window.innerWidth <= 768 ? "100%" : "35%",
+    marginBottom: window.innerWidth <= 768 ? "0.7rem" : "0",
+  }}
+>
                         <FastField
                             name="salutation"
                             type="text"
@@ -320,7 +354,11 @@ class CandidateJobApplyForm extends Component {
               
                           />
                         </div>
-                        <div style={{ width: "63%" }}>
+                        <div
+  style={{
+    width: window.innerWidth <= 768 ? "100%" : "63%",
+  }}
+>
                         <FastField
                             isRequired
                             name="firstName"
@@ -334,8 +372,16 @@ class CandidateJobApplyForm extends Component {
                         </div>
                       </FlexContainer>
                             <Spacer />
-                      <FlexContainer justifyContent="space-between">
-                        <div style={{ width: "44%" }}>
+                      <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
+                        <div
+  style={{
+    width: window.innerWidth <= 768 ? "100%" : "44%",
+    marginBottom: window.innerWidth <= 768 ? "0.7rem" : "0",
+  }}
+>
                         <FastField
                             name="middleName"
                             label="Middle Name"
@@ -346,7 +392,11 @@ class CandidateJobApplyForm extends Component {
                             inlineLabel
                           />
                         </div>
-                        <div style={{ width: "55%" }}>
+                        <div
+  style={{
+    width: window.innerWidth <= 768 ? "100%" : "55%",
+  }}
+>
                         <FastField
                             name="lastName"
                             label="Last Name"
@@ -388,7 +438,12 @@ class CandidateJobApplyForm extends Component {
                   </FlexContainer>
                   <Spacer />                  
                   <FlexContainer justifyContent="space-between" >
-                    <div style={{ width: "24%" }}>
+                    <div
+  style={{
+    width: window.innerWidth <= 768 ? "100%" : "24%",
+    marginBottom: window.innerWidth <= 768 ? "0.7rem" : "0",
+  }}
+>
                       <Field
                       isRequired
                         name="countryDialCode"
@@ -400,7 +455,12 @@ class CandidateJobApplyForm extends Component {
                         inlineLabel
                       />
                     </div>
-                    <div style={{ width: "34%" }}>
+                    <div
+  style={{
+    width: window.innerWidth <= 768 ? "100%" : "34%",
+    marginBottom: window.innerWidth <= 768 ? "0.7rem" : "0",
+  }}
+>
                       <Field
                       isRequired
                         type="text"
@@ -412,8 +472,18 @@ class CandidateJobApplyForm extends Component {
                         isColumn
                       />
                     </div>
-                    <div style={{ width: "20%" }}>
-                      WhatsApp
+                    <div
+  style={{
+    width: window.innerWidth <= 768 ? "100%" : "30%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: window.innerWidth <= 768 ? "flex-start" : "center",
+    gap: "6px",
+  }}
+>
+  <label>
+    WhatsApp
+  </label>
                       <Switch
                         
                         onChange={this.handleWhatsApp}
@@ -427,7 +497,10 @@ class CandidateJobApplyForm extends Component {
                     
                   </FlexContainer>
                   <Spacer />
-                  <FlexContainer justifyContent="space-between">
+                 <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
                     <div style={{ width: "100%" }}>
                       {" "}
                       {this.state.whatsapp && (
@@ -479,7 +552,10 @@ class CandidateJobApplyForm extends Component {
                     </div>
                   </FlexContainer>
                   <Spacer />
-                  <FlexContainer justifyContent="space-between">
+                  <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
                     <div style={{ width: "100%" }}>
                       <FastField
                         name="idProof"
@@ -514,7 +590,10 @@ class CandidateJobApplyForm extends Component {
                    
                   </FlexContainer>
                   <Spacer />
-                  <FlexContainer justifyContent="space-between">
+                  <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
                     <div style={{ width: "100%" }}>
                       <FastField
                         isRequired
@@ -531,7 +610,10 @@ class CandidateJobApplyForm extends Component {
                     </div>
                   </FlexContainer>
                   <Spacer />
-                  {/* <FlexContainer justifyContent="space-between">
+                  {/* <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
                       <div style={{ width: "47%" }}>
                         <FastField
                           name="countryDialCode1"
@@ -574,7 +656,10 @@ class CandidateJobApplyForm extends Component {
                       </div>
                     </FlexContainer> */}
 
-                  <FlexContainer justifyContent="space-between">
+                  <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
                     <div style={{ width: "100%",marginTop:"1rem" }}>
                       <FastField
                         name="designationTypeId"
@@ -589,7 +674,10 @@ class CandidateJobApplyForm extends Component {
                     </div>
                   </FlexContainer>
                   <Spacer />
-                  <FlexContainer justifyContent="space-between">
+                  <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
                     <div style={{ width: "100%",marginTop:"1rem" }}>
                       <>
                         <Field
@@ -615,8 +703,16 @@ class CandidateJobApplyForm extends Component {
                     
                   </FlexContainer>
                   <Spacer />
-                  <FlexContainer justifyContent="space-between">
-                    <div style={{ width: "45%" }}>
+                  <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
+                   <div
+  style={{
+    width: window.innerWidth <= 768 ? "100%" : "45%",
+    marginBottom: window.innerWidth <= 768 ? "0.7rem" : "0",
+  }}
+>
                       <Field
                         name="dateOfBirth"
                         label="Month of Birth"
@@ -630,7 +726,12 @@ class CandidateJobApplyForm extends Component {
                         // defaultValue={moment("2020-01-01")}
                       />
                     </div>
-                    <div style={{ width: "45%" }}>
+                    <div
+  style={{
+    width: window.innerWidth <= 768 ? "100%" : "45%",
+    marginBottom: window.innerWidth <= 768 ? "0.7rem" : "0",
+  }}
+>
                       <Field
                         name="date"
                         label="Date of Birth"
@@ -643,9 +744,6 @@ class CandidateJobApplyForm extends Component {
                         // defaultValue={moment("2020-01-01")}
                       />
                     </div>
-                    
-
-                    
                   </FlexContainer>
                 </div>
                 &nbsp;
@@ -663,7 +761,10 @@ class CandidateJobApplyForm extends Component {
                   <>
                     <Spacer style={{ marginTop: "1em" }} />
                     <FlexContainer>
-                      <FlexContainer justifyContent="space-between">
+                      <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
                       
                         <div >
                         <StyledLabel>Applying for</StyledLabel>
@@ -691,12 +792,18 @@ class CandidateJobApplyForm extends Component {
                       </FlexContainer>
                     </FlexContainer>
                     <Spacer  />
-                    <FlexContainer justifyContent="space-between">
+                    <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
 
                       
 
                       <div style={{ width: "47%" }}>
-                        <FlexContainer justifyContent="space-between">
+                        <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
                           <StyledLabel>Type</StyledLabel>
                           <Switch
                             checked={this.state.billing}
@@ -708,7 +815,10 @@ class CandidateJobApplyForm extends Component {
                       </div>
                     </FlexContainer>
                     <Spacer style={{ marginTop: "1em" }} />
-                    <FlexContainer justifyContent="space-between">
+                    <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
                       <div style={{ width: "100%" }}>
                         {" "}
                         {this.state.availability && (
@@ -732,15 +842,15 @@ class CandidateJobApplyForm extends Component {
     }
   }
 }}
-
-                          />
+ />
                         )}
                       </div>
-
-                     
                     </FlexContainer>
                     <Spacer style={{ marginTop: "1.25em" }} />
-                    <FlexContainer justifyContent="space-between">
+                    <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
                       <div style={{ width: "100%" }}>
                         <Field
                           name="billing"
@@ -750,12 +860,13 @@ class CandidateJobApplyForm extends Component {
                           component={InputComponent}
                         />
                       </div>
-
-                      
                     </FlexContainer>
                   </>
                   <Spacer />
-                  <FlexContainer justifyContent="space-between">
+                  <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
                     <div style={{ width: "100%" }}>
                       <FastField
                         // isRequired
@@ -779,7 +890,10 @@ class CandidateJobApplyForm extends Component {
                     
                   </FlexContainer>
                   <Spacer />
-                  <FlexContainer justifyContent="space-between">
+                  <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
                     <div style={{ width: "100%" }}>
                       <Field
                         name="benifit"
@@ -822,7 +936,11 @@ class CandidateJobApplyForm extends Component {
                 </div>
 
                     </div>
-                    <div style={{width:"49%"}}>
+                    <div
+  style={{
+    width: window.innerWidth <= 768 ? "100%" : "49%",
+  }}
+>
                       {/* Right */}
 
                        <div >
@@ -938,7 +1056,10 @@ class CandidateJobApplyForm extends Component {
 
                       
                       <div style={{margin:"5%"}}>
-                    <FlexContainer justifyContent="space-between">
+                    <FlexContainer
+  justifyContent="space-between"
+  flexWrap={window.innerWidth <= 768 ? "wrap" : "nowrap"}
+>
                       <StyledLabel >Active</StyledLabel>                     
                       <Switch                                              
                         checked={this.state.availability}
@@ -1005,6 +1126,12 @@ class CandidateJobApplyForm extends Component {
                       />
                     </div>
                     <Spacer style={{ marginTop: "8%" }} />
+                    <div
+  style={{
+    marginLeft: window.innerWidth <= 768 ? "-1.7rem" : "0",
+    width: "100%",
+  }}
+>
                     <FieldArray
                     name="address"
                     render={(arrayHelpers) => (
@@ -1015,7 +1142,7 @@ class CandidateJobApplyForm extends Component {
                       />
                     )}
                   />
-
+</div>
                     </div>
                 </div>
            </div>
@@ -1062,12 +1189,3 @@ const mapDispatchToProps = (dispatch) =>
   );
 
 export default connect(mapStateToProps, mapDispatchToProps)(CandidateJobApplyForm);
-
-
-
-
-
-
-
-
-
